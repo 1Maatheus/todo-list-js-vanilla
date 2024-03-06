@@ -11,6 +11,11 @@ ul li {
   list-style: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) no-repeat fixed;
@@ -49,6 +54,44 @@ body {
   visibility: hidden;
   transform: translateY(-100%);
   opacity: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-container {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 6px 5px 28px -8px rgba(0, 0, 0, 0.41);
+  padding: 1.2rem 2rem;
+}
+
+.todo-logo {
+  display: flex;
+  align-items: center;
+  gap: 15rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.todo-logo .todo-logo-title {
+  font-weight: 300;
+}
+
+.todo-image {
+  display: flex;
+  gap: 1rem;
+}
+.todo-image .todo-date {
+  display: flex;
+  flex-direction: column;
+}
+.todo-image .todo-date-day {
+  align-self: flex-end;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

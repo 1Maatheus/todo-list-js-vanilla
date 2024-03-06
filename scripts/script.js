@@ -1,13 +1,13 @@
-const btn = document.getElementById("btn-todo");
-const todoInput = document.getElementById("todo");
-const todoList = document.querySelector(".todo-list");
-const btnDelete = document.getElementById("btn-delete");
-const removeToast = document.querySelector(".toaster-btn");
-const modalUpdate = document.querySelector(".update-todo");
-const updateInput = document.getElementById("todo-update");
-const btnCloseModal = document.getElementById("close-modal");
-const btnTeste = document.getElementById("teste");
+import { generateDate } from "./date.js";
 
+function todoDate() {
+  const date = generateDate();
+
+  document.querySelector(".day").textContent = date.day;
+  document.querySelector(".month").textContent = date.month;
+  document.querySelector(".year").textContent = date.year;
+}
+todoDate();
 // let todos = [];
 
 // function createTodo() {

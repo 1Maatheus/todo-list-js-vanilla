@@ -16,38 +16,31 @@
     </div>
     <!-- Toaster -->
 
-    <section class="input-form">
-      <label for="todo">Nova tarefa:</label>
-      <input type="text" placeholder="Estudar CSS..." id="todo" name="todo" />
-      <button id="btn-todo" onclick="createTodo()">Criar Tarefa</button>
-    </section>
-
+    <!-- Todo box -->
     <main class="main">
-      <section class="todos">
-        <ul class="todo-list"></ul>
-      </section>
-    </main>
-
-    <section class="update-todo">
-      <div class="todo-update-input">
-        <span id="close-modal">X</span>
-        <label for="todo-update">Atualizar tarefa:</label>
-        <input
-          type="text"
-          placeholder="Estudar CSS..."
-          id="todo-update"
-          name="todo-update"
-        />
-        <button id="btn-todo-update" onclick="updateTodo()">
-          Atualizar Tarefa
-        </button>
+      <div class="todo-container">
+        <div class="todo-logo">
+          <h1 class="todo-logo-title">TODO List</h1>
+          <span class="todo-image">
+            <span class="todo-date">
+              <span class="todo-date-day"> Today </span>
+              <span class="date"
+                ><span class="day"></span>
+                <span class="month"></span>
+                <span class="year"></span
+              ></span>
+            </span>
+            <img src="./assets/calendar.svg" alt="" />
+          </span>
+        </div>
       </div>
-    </section>
+    </main>
+    <!-- Todo box -->
 
     <script
       src="https://kit.fontawesome.com/78ed44f158.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
