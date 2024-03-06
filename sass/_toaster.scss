@@ -1,0 +1,34 @@
+.toaster-empty,
+.toaster-todo-exists {
+  visibility: hidden;
+  background-color: #fff;
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  top: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: 0.4s ease;
+}
+
+.toaster-empty {
+  left: calc(50% - (374.53px / 2));
+}
+
+.toaster-todo-exists {
+  left: calc(50% - (206.3px / 2));
+}
+
+.toaster-empty.active,
+.toaster-todo-exists.active {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toaster-empty.remove,
+.toaster-todo-exists.remove {
+  visibility: hidden;
+  transform: translateY(-100%);
+  opacity: 0;
+}

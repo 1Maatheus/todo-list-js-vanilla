@@ -3,23 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Teste CRUD</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TODO List</title>
   </head>
   <body>
-    <div class="toaster">
-      <p class="toaster-message">
-        Insira alguma tarefa para adicionar a lista.
-      </p>
+    <!-- Toasters -->
+    <div class="toaster-empty">
+      <p class="toaster-title">Insira alguma tarefa para adicionar a lista.</p>
     </div>
-
-    <div class="toaster-todo">
-      <p class="toaster-message">Tafera já cadastrada!</p>
+    <div class="toaster-todo-exists">
+      <p class="toaster-title">Tafera já cadastrada!</p>
     </div>
-
-    <header class="header">
-      <h1 class="header-title">TODO List</h1>
-    </header>
+    <!-- Toaster -->
 
     <section class="input-form">
       <label for="todo">Nova tarefa:</label>
@@ -53,6 +48,6 @@
       src="https://kit.fontawesome.com/78ed44f158.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
