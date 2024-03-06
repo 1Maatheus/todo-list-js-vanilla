@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Teste CRUD</title>
+  </head>
+  <body>
+    <div class="toaster">
+      <p class="toaster-message">
+        Insira alguma tarefa para adicionar a lista.
+      </p>
+    </div>
+
+    <div class="toaster-todo">
+      <p class="toaster-message">Tafera já cadastrada!</p>
+    </div>
+
+    <header class="header">
+      <h1 class="header-title">TODO List</h1>
+    </header>
+
+    <section class="input-form">
+      <label for="todo">Nova tarefa:</label>
+      <input type="text" placeholder="Estudar CSS..." id="todo" name="todo" />
+      <button id="btn-todo" onclick="createTodo()">Criar Tarefa</button>
+    </section>
+
+    <main class="main">
+      <section class="todos">
+        <ul class="todo-list"></ul>
+      </section>
+    </main>
+
+    <section class="update-todo">
+      <div class="todo-update-input">
+        <span id="close-modal">X</span>
+        <label for="todo-update">Atualizar tarefa:</label>
+        <input
+          type="text"
+          placeholder="Estudar CSS..."
+          id="todo-update"
+          name="todo-update"
+        />
+        <button id="btn-todo-update" onclick="updateTodo()">
+          Atualizar Tarefa
+        </button>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/78ed44f158.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
