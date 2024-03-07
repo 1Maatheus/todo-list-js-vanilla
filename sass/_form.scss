@@ -1,0 +1,36 @@
+.todo-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+form {
+  width: 100%;
+}
+
+#todo-input {
+  background-color: #ececec;
+  border: none;
+  outline: none;
+  width: 95%;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  color: #444e;
+  &::placeholder {
+    font-size: 1rem;
+  }
+}
+
+#addTodo {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background-color: #44ec;
+  padding: 0rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+  transition: 0.2s ease;
+  &:hover {
+    background-color: #44ee;
+  }
+}
