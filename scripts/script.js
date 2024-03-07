@@ -1,13 +1,3 @@
-import { generateDate } from "./date.js";
-
-function todoDate() {
-  const date = generateDate();
-
-  document.querySelector(".day").textContent = date.day;
-  document.querySelector(".month").textContent = date.month;
-  document.querySelector(".year").textContent = date.year;
-}
-todoDate();
 // let todos = [];
 
 // function createTodo() {
@@ -129,4 +119,4 @@ todoDate();
 //   }
 // });
 
-// document.addEventListener("DOMContentLoaded", getFromLocalStorage || []);
+// document.addEventListener("DOMContentLoaded", getFromLocalStorage ||

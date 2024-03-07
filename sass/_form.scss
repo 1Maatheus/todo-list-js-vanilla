@@ -33,4 +33,8 @@ form {
   &:hover {
     background-color: #44ee;
   }
+  &:active {
+    position: relative;
+    top: 2px;
+  }
 }

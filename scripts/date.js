@@ -1,4 +1,4 @@
-export function generateDate() {
+function generateDate() {
   const date = new Date();
   const day = date.getDate();
   const month = date.getMonth();
@@ -19,9 +19,8 @@ export function generateDate() {
     "Dez",
   ];
 
-  return {
-    day,
-    month: months[month],
-    year,
-  };
+  document.querySelector(".day").textContent = day;
+  document.querySelector(".month").textContent = months[month];
+  document.querySelector(".year").textContent = year;
 }
+generateDate();

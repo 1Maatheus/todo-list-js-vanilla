@@ -152,5 +152,9 @@ form {
 #addTodo:hover {
   background-color: rgba(68, 68, 238, 0.9333333333);
 }
+#addTodo:active {
+  position: relative;
+  top: 2px;
+}
 
 /*# sourceMappingURL=style.css.map */
