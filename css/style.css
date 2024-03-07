@@ -94,4 +94,27 @@ body {
   font-weight: 500;
 }
 
+@media screen and (max-width: 430px) {
+  .todo-container {
+    padding: 0.85rem;
+    width: 90svw;
+  }
+  .todo-logo {
+    gap: 4rem;
+    justify-content: space-between;
+  }
+  .todo-logo .todo-logo-title {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  .day,
+  .month,
+  .year {
+    font-size: 1rem;
+  }
+  .calendar-img {
+    width: 2rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
