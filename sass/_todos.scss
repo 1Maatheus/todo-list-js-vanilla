@@ -2,12 +2,18 @@
   margin-top: 2.5rem;
 }
 
+.todos-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .todo-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 0.65rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc6e;
 }
 
 .left-item {
@@ -23,15 +29,16 @@
   border-radius: 4px;
   border: 2px solid #949e94;
   background: transparent;
+  cursor: pointer;
 }
 
 .left-item input:checked {
-  background: #2bdd49;
+  background: #44ee;
   border: 2px solid transparent;
 }
 
 .todo-title {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 #delete-todo {

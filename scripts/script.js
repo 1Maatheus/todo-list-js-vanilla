@@ -85,46 +85,12 @@
 //   renderTodo();
 // }
 
-// function callToaster() {
-//   const toaster = document.querySelector(".toaster");
-//   toaster.classList.add("active");
-//   toaster.classList.remove("remove");
-
-//   setTimeout(() => {
-//     toaster.classList.add("remove");
-//   }, 2000);
-// }
-
-// function callToasterTodo() {
-//   const toaster = document.querySelector(".toaster-todo");
-//   toaster.classList.add("active");
-//   toaster.classList.remove("remove");
-
-//   setTimeout(() => {
-//     toaster.classList.add("remove");
-//   }, 5000);
-// }
-
-// function openModal() {
-//   modalUpdate.classList.add("active");
-// }
-
-// function closeModal() {
-//   modalUpdate.classList.remove("active");
-// }
-
-// document.addEventListener("click", (e) => {
-//   if (e.target === modalUpdate || e.target === btnCloseModal) {
-//     modalUpdate.classList.remove("active");
-//   }
-// });
-
 // document.addEventListener("DOMContentLoaded", getFromLocalStorage ||
 
 let todos = [];
 
 // Function to save the todos in the local storage and render them on the screen when the page is refreshed
-const setLocalStorage = () => {
+const setLocalStorage = (todos) => {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
@@ -134,11 +100,6 @@ const getFromLocalStorage = () =>
 //Function to create a new todo
 function createTodo() {
   const todoInput = document.getElementById("todo-input").value.trim();
-
-  if (todoInput === "") {
-    callToasterEmpty();
-    return;
-  }
 
   if (todos.some((todo) => todo.content === todoInput)) {
     callToasterTodo();
@@ -150,8 +111,14 @@ function createTodo() {
     content: todoInput,
     complete: false,
   };
-  todos.push(todo);
-  setLocalStorage();
+
+  if (todoInput === "") {
+    callToasterEmpty();
+  } else {
+    todos.push(todo);
+    renderTodo();
+    setLocalStorage(todos);
+  }
 }
 
 //Function to read the todos from the local storage
@@ -159,7 +126,38 @@ function readTodos() {
   return getFromLocalStorage();
 }
 
-console.log(readTodos());
+//Function to delete a todo
+function deleteTodo(id) {
+  const todoIndex = todos.findIndex((todo) => todo.id === id);
+  todos.splice(todoIndex, 1);
+  renderTodo();
+  setLocalStorage(id);
+}
+
+//Function to render the todos on the screen
+function renderTodo() {
+  const todoList = document.querySelector(".todos-items");
+
+  todoList.innerHTML = `
+  ${todos
+    .map(
+      (todo) =>
+        ` <li class="todo-item">
+            <div class="left-item">
+              <input type="checkbox" id="todo-checkbox" />
+              <span class="todo-title">${todo.content}</span>
+            </div>
+            <div class="right-item">
+              <button id="delete-todo" onclick="deleteTodo()">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </li>`
+    )
+    .join("")}
+`;
+}
+
 // Function to call toaster if the input is empty or if the todo already exists
 function callToasterEmpty() {
   const toasterEmpty = document.querySelector(".toaster-empty");
@@ -180,3 +178,9 @@ function callToasterTodo() {
     toasterTodo.classList.add("remove");
   }, 2000);
 }
+
+//Function to load the todos from the local storage when the page is refreshed
+document.addEventListener("DOMContentLoaded", () => {
+  todos = readTodos();
+  renderTodo();
+});
