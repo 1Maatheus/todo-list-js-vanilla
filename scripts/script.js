@@ -120,3 +120,54 @@
 // });
 
 // document.addEventListener("DOMContentLoaded", getFromLocalStorage ||
+
+let todos = [];
+
+//Function to create a new todo
+function createTodo() {
+  const todoInput = document.getElementById("todo-input").value.trim();
+
+  if (todoInput === "") {
+    callToasterEmpty();
+    return;
+  }
+
+  if (todos.some((todo) => todo.content === todoInput)) {
+    callToasterTodo();
+    return;
+  }
+
+  let todo = {
+    id: todos.length + 1,
+    content: todoInput,
+    complete: false,
+  };
+  todos.push(todo);
+  setLocalStorage();
+}
+
+// Function to call toaster if the input is empty or if the todo already exists
+function callToasterEmpty() {
+  const toasterEmpty = document.querySelector(".toaster-empty");
+  toasterEmpty.classList.add("active");
+  toasterEmpty.classList.remove("remove");
+
+  setTimeout(() => {
+    toasterEmpty.classList.add("remove");
+  }, 2000);
+}
+
+function callToasterTodo() {
+  const toasterTodo = document.querySelector(".toaster-todo-exists");
+  toasterTodo.classList.add("active");
+  toasterTodo.classList.remove("remove");
+
+  setTimeout(() => {
+    toasterTodo.classList.add("remove");
+  }, 2000);
+}
+
+// Function to save the todos in the local storage and render them on the screen when the page is refreshed
+const setLocalStorage = () => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
