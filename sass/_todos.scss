@@ -1,0 +1,49 @@
+.todos-created {
+  margin-top: 2.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.left-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.left-item input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #949e94;
+  background: transparent;
+}
+
+.left-item input:checked {
+  background: #2bdd49;
+  border: 2px solid transparent;
+}
+
+.todo-title {
+  font-size: 1.1rem;
+}
+
+#delete-todo {
+  border: none;
+  cursor: pointer;
+  background: #cc1b1bcc;
+  color: #fff;
+  padding: 0.85rem;
+  border-radius: 0.2rem;
+  transition: 0.2s ease;
+}
+
+#delete-todo:hover {
+  background: #cc1b1b;
+}

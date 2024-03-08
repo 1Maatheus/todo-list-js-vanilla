@@ -123,6 +123,14 @@
 
 let todos = [];
 
+// Function to save the todos in the local storage and render them on the screen when the page is refreshed
+const setLocalStorage = () => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
+const getFromLocalStorage = () =>
+  JSON.parse(localStorage.getItem("todos")) ?? [];
+
 //Function to create a new todo
 function createTodo() {
   const todoInput = document.getElementById("todo-input").value.trim();
@@ -146,6 +154,12 @@ function createTodo() {
   setLocalStorage();
 }
 
+//Function to read the todos from the local storage
+function readTodos() {
+  return getFromLocalStorage();
+}
+
+console.log(readTodos());
 // Function to call toaster if the input is empty or if the todo already exists
 function callToasterEmpty() {
   const toasterEmpty = document.querySelector(".toaster-empty");
@@ -166,8 +180,3 @@ function callToasterTodo() {
     toasterTodo.classList.add("remove");
   }, 2000);
 }
-
-// Function to save the todos in the local storage and render them on the screen when the page is refreshed
-const setLocalStorage = () => {
-  localStorage.setItem("todos", JSON.stringify(todos));
-};
