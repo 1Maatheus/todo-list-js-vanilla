@@ -94,30 +94,33 @@ const setLocalStorage = (todos) => {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
-const getFromLocalStorage = () =>
-  JSON.parse(localStorage.getItem("todos")) ?? [];
+const getFromLocalStorage = () => {
+  return JSON.parse(localStorage.getItem("todos")) ?? [];
+};
 
 //Function to create a new todo
 function createTodo() {
-  const todoInput = document.getElementById("todo-input").value.trim();
+  const todoInput = document.getElementById("todo-input");
+  let todoInputValue = todoInput.value.trim();
 
-  if (todos.some((todo) => todo.content === todoInput)) {
+  if (todos.some((todo) => todo.content === todoInputValue)) {
     callToasterTodo();
     return;
   }
 
   let todo = {
     id: todos.length + 1,
-    content: todoInput,
+    content: todoInputValue,
     complete: false,
   };
 
-  if (todoInput === "") {
+  if (todoInputValue === "") {
     callToasterEmpty();
   } else {
     todos.push(todo);
     renderTodo();
     setLocalStorage(todos);
+    todoInput.value = "";
   }
 }
 
@@ -134,6 +137,13 @@ function deleteTodo(id) {
   setLocalStorage(id);
 }
 
+function toggleTodoComplete(id) {
+  const todoIndex = todos.findIndex((todo) => todo.id === id);
+  todos[todoIndex].complete = !todos[todoIndex].complete;
+  renderTodo();
+  setLocalStorage(todos);
+}
+
 //Function to render the todos on the screen
 function renderTodo() {
   const todoList = document.querySelector(".todos-items");
@@ -144,7 +154,11 @@ function renderTodo() {
       (todo) =>
         ` <li class="todo-item">
             <div class="left-item">
-              <input type="checkbox" id="todo-checkbox" />
+            <input type="checkbox"  id="todo-checkbox-${
+              todo.id
+            }" onchange="toggleTodoComplete(${todo.id})" ${
+          todo.complete ? "checked" : ""
+        } />
               <span class="todo-title">${todo.content}</span>
             </div>
             <div class="right-item">
@@ -156,6 +170,14 @@ function renderTodo() {
     )
     .join("")}
 `;
+
+  if (todos.length === 0) {
+    const divTodo = document.querySelector(".todos-created");
+    divTodo.classList.remove("active");
+  } else {
+    const divTodo = document.querySelector(".todos-created");
+    divTodo.classList.add("active");
+  }
 }
 
 // Function to call toaster if the input is empty or if the todo already exists
