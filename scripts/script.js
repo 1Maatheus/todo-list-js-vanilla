@@ -214,9 +214,26 @@ function trocarBg() {
     const btn = document.getElementById("bgChange");
     btn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
   }
+  saveThemeLocalStorage();
 }
 
+const saveThemeLocalStorage = () => {
+  const body = document.querySelector("body");
+  localStorage.setItem("theme", body.classList.contains("bgDark"));
+};
+
+const getThemeLocalStorage = () => {
+  const body = document.querySelector("body");
+  const theme = JSON.parse(localStorage.getItem("theme"));
+  if (theme === true) {
+    body.classList.add("bgDark");
+    const btn = document.getElementById("bgChange");
+    btn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+  getThemeLocalStorage();
   todos = readTodos();
   renderTodo();
 });
