@@ -19,9 +19,43 @@ img {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) no-repeat fixed;
+  background: url(../assets/vivid-blurred-colorful-background.jpg) no-repeat fixed center center/cover;
+  transition: 0.3s ease;
 }
 
+#bgChange {
+  position: absolute;
+  background-color: transparent;
+  font-size: 1.4rem;
+  border: 1px solid #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  right: 2rem;
+  top: 2rem;
+  bottom: 0;
+}
+
+.bgDark {
+  background: url(../assets/desktop-bg.jpg) no-repeat fixed center center/cover;
+}
+
+.btnLight {
+  border: 1px solid #222;
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    background: url(../assets/vivid-blurred-colorful-background.jpg) no-repeat fixed center center/cover;
+  }
+  #bgChange {
+    top: 28em;
+  }
+}
 .toaster-empty,
 .toaster-todo-exists {
   visibility: hidden;
@@ -57,6 +91,16 @@ body {
   opacity: 0;
 }
 
+@media screen and (max-width: 430px) {
+  .toaster-empty {
+    top: 4.5rem;
+    padding: 0.5rem;
+    left: calc(50% - 179.265px);
+  }
+  .toaster-todo-exists {
+    top: 4.5rem;
+  }
+}
 .main {
   display: flex;
   justify-content: center;

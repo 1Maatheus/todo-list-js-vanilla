@@ -32,3 +32,15 @@
   transform: translateY(-100%);
   opacity: 0;
 }
+
+@media screen and (max-width: 430px) {
+  .toaster-empty {
+    top: 4.5rem;
+    padding: 0.5rem;
+    left: calc(50% - (358.53px / 2));
+  }
+
+  .toaster-todo-exists {
+    top: 4.5rem;
+  }
+}

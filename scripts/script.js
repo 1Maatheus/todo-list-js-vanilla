@@ -202,6 +202,20 @@ function callToasterTodo() {
 }
 
 //Function to load the todos from the local storage when the page is refreshed
+
+function trocarBg() {
+  const body = document.querySelector("body");
+  body.classList.toggle("bgDark");
+
+  if (!body.classList.contains("bgDark")) {
+    const btn = document.getElementById("bgChange");
+    btn.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+  } else {
+    const btn = document.getElementById("bgChange");
+    btn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   todos = readTodos();
   renderTodo();
