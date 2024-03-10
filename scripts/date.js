@@ -1,3 +1,4 @@
+// Function that generate the date
 function generateDate() {
   const date = new Date();
   const day = date.getDate();

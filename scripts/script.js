@@ -1,92 +1,3 @@
-// let todos = [];
-
-// function createTodo() {
-//   let novaTodo = todoInput.value.trim();
-//   if (todos.some((todo) => todo.conteudo === novaTodo)) {
-//     callToasterTodo();
-//     return;
-//   }
-
-//   let todo = {
-//     id: todos.length + 1,
-//     conteudo: novaTodo,
-//     complete: false,
-//   };
-
-//   if (novaTodo === "") {
-//     callToaster();
-//   } else {
-//     todos.push(todo);
-//     renderTodo();
-//     setLocalStorage(todos);
-//     todoInput.value = "";
-//   }
-// }
-
-// function readTodos() {
-//   return getFromLocalStorage();
-// }
-
-// function renderTodo() {
-//   todoList.innerHTML = `
-//       ${todos
-//         .map(
-//           (todo) =>
-//             `<li class="todo-item">
-//           <div class="left-item">
-//             <input type="checkbox" /> <span>${todo.conteudo}</span>
-//           </div>
-//           <div class="right-item">
-//             <button onclick="openModal(${todo.id}, '${todo.conteudo}')" title="Atualizar Tarefa" id="btn-update">
-//               <i class="fa-solid fa-pencil"></i>
-//             </button>
-//             <button onclick="deleteTodo()" title="Excluir Tarefa" id="btn-delete">
-//               <i class="fa-solid fa-trash"></i>
-//             </button>
-//           </div>
-//         </li>`
-//         )
-//         .join("")}
-//   `;
-
-//   if (todos.length === 0) {
-//     const todoDiv = document.querySelector(".todos");
-//     todoDiv.classList.remove("active");
-//   } else {
-//     const todoDiv = document.querySelector(".todos");
-//     todoDiv.classList.add("active");
-//   }
-// }
-
-// function deleteTodo(id) {
-//   const todoIndex = todos.findIndex((todo) => todo.id === id);
-//   todos.splice(todoIndex, 1);
-//   renderTodo();
-//   setLocalStorage(id);
-
-//   if (todos.length === 0) {
-//     const todoDiv = document.querySelector(".todos");
-//     todoDiv.classList.remove("active");
-//   }
-// }
-
-// function updateTodo(id) {
-//   const teste = todos[id].conteudo;
-//   console.log(teste);
-//   // setLocalStorage();
-// }
-
-// function setLocalStorage(todos) {
-//   localStorage.setItem("todos", JSON.stringify(todos));
-// }
-
-// function getFromLocalStorage() {
-//   JSON.parse(localStorage.getItem("todos")) ?? [];
-//   renderTodo();
-// }
-
-// document.addEventListener("DOMContentLoaded", getFromLocalStorage ||
-
 let todos = [];
 
 // Function to save the todos in the local storage and render them on the screen when the page is refreshed
@@ -137,6 +48,7 @@ function deleteTodo(id) {
   setLocalStorage(id);
 }
 
+//Function to toggle the todo as complete or not complete
 function toggleTodoComplete(id) {
   const todoIndex = todos.findIndex((todo) => todo.id === id);
   todos[todoIndex].complete = !todos[todoIndex].complete;
@@ -202,7 +114,6 @@ function callToasterTodo() {
 }
 
 //Function to load the todos from the local storage when the page is refreshed
-
 function trocarBg() {
   const body = document.querySelector("body");
   body.classList.toggle("bgDark");
@@ -217,11 +128,13 @@ function trocarBg() {
   saveThemeLocalStorage();
 }
 
+//Function to save the theme in the local storage
 const saveThemeLocalStorage = () => {
   const body = document.querySelector("body");
   localStorage.setItem("theme", body.classList.contains("bgDark"));
 };
 
+//Function to get the theme from the local storage
 const getThemeLocalStorage = () => {
   const body = document.querySelector("body");
   const theme = JSON.parse(localStorage.getItem("theme"));
@@ -232,6 +145,7 @@ const getThemeLocalStorage = () => {
   }
 };
 
+//Load the todos and the theme from the local storage when the page is refreshed
 document.addEventListener("DOMContentLoaded", () => {
   getThemeLocalStorage();
   todos = readTodos();
