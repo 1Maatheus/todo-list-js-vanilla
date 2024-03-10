@@ -10,7 +10,7 @@
 
 <p>Nesse app você pode criar novas tarefas, marca-las como concluídas e excluir. O app conta com a funcionalidade de salvar as suas tarefas no local storage. Além disso, ele também salva a sua preferência de tema, caso escolha o tema 'dark', toda vez que entrar no app, automaticamente ele já entrará com o tema 'dark'.</p>
 
-Acesse o app clicando [AQUI](https://www.1maatheus.github.io/todo-list-js-vanilla").
+Acesse o app clicando [AQUI](https://www.1maatheus.github.io/todo-list-js-vanilla).
 
 <br>
 
