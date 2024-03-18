@@ -48,12 +48,41 @@ body {
   border: 1px solid #222;
 }
 
+.notification-container {
+  position: absolute;
+  text-align: center;
+  width: 400px;
+  padding: 0.6rem;
+  bottom: 15rem;
+  border-radius: 0.2rem;
+  left: calc(50% - 200px);
+  background-color: #fff;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.notification-container.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification-container.remove {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
 @media screen and (max-width: 420px) {
   body {
     background: url(../assets/vivid-blurred-colorful-background.jpg) no-repeat fixed center center/cover;
   }
   #bgChange {
     top: 28em;
+  }
+  .notification-container {
+    bottom: 8rem;
+    width: 95vw;
+    left: calc(50% - 47.5vw);
   }
 }
 .toaster-empty,
