@@ -47,30 +47,6 @@ body {
   border: 1px solid #222;
 }
 
-.notification-container {
-  position: absolute;
-  text-align: center;
-  width: 400px;
-  padding: 0.6rem;
-  bottom: 15rem;
-  border-radius: 0.2rem;
-  left: calc(50% - 200px);
-  background-color: #fff;
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: 0.3s ease;
-}
-
-.notification-container.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.notification-container.remove {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
 .bg-div,
 .bg-div-2,
 .bg-div-3,

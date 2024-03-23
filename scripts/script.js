@@ -145,20 +145,6 @@ const getThemeLocalStorage = () => {
   }
 };
 
-//Call the notification div
-function callNotification() {
-  const notification = document.querySelector(".notification-container");
-
-  setTimeout(() => {
-    notification.classList.add("active");
-  }, 2000);
-
-  setTimeout(() => {
-    notification.classList.remove("active");
-  }, 5000);
-}
-callNotification();
-
 //Load the todos and the theme from the local storage when the page is refreshed
 document.addEventListener("DOMContentLoaded", () => {
   getThemeLocalStorage();
