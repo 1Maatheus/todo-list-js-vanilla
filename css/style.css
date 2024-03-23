@@ -116,16 +116,41 @@ body {
 }
 
 @media screen and (max-width: 420px) {
-  body {
-    background: url(../assets/vivid-blurred-colorful-background.jpg) no-repeat fixed center center/cover;
-  }
   #bgChange {
-    top: 28em;
+    top: 25em;
   }
   .notification-container {
     bottom: 8rem;
     width: 95vw;
     left: calc(50% - 47.5vw);
+  }
+  .bg-div {
+    width: 40vw;
+    height: 40vh;
+    right: 0rem;
+    top: 0rem;
+    background-color: rgba(229, 159, 243, 0.8823529412);
+  }
+  .bg-div-2 {
+    width: 40vw;
+    height: 40vh;
+    left: 0rem;
+    top: 0rem;
+    background-color: rgba(153, 209, 231, 0.9254901961);
+  }
+  .bg-div-3 {
+    width: 40vw;
+    height: 40vh;
+    left: 0rem;
+    bottom: 0rem;
+    background-color: rgb(139, 180, 243);
+  }
+  .bg-div-4 {
+    width: 40vw;
+    height: 40vh;
+    right: 0rem;
+    bottom: 0rem;
+    background-color: rgba(233, 59, 204, 0.4784313725);
   }
 }
 .toaster-empty,
