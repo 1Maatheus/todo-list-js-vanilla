@@ -115,16 +115,22 @@ function callToasterTodo() {
 
 //Function to load the todos from the local storage when the page is refreshed
 function trocarBg() {
-  const body = document.querySelector("body");
-  body.classList.toggle("bgDark");
+  const bg1 = document.querySelector(".bg-div");
+  const bg2 = document.querySelector(".bg-div-2");
+  const bg3 = document.querySelector(".bg-div-3");
+  const bg4 = document.querySelector(".bg-div-4");
 
-  if (!body.classList.contains("bgDark")) {
-    const btn = document.getElementById("bgChange");
-    btn.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-  } else {
-    const btn = document.getElementById("bgChange");
-    btn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-  }
+  bg1.classList.toggle("dark");
+  bg2.classList.toggle("dark");
+  bg3.classList.toggle("dark");
+  bg4.classList.toggle("dark");
+
+  const btn = document.getElementById("bgChange");
+  btn.classList.toggle("active");
+
+  const ball = document.querySelector(".ball");
+  ball.classList.toggle("active");
+
   saveThemeLocalStorage();
 }
 

@@ -24,23 +24,40 @@ body {
 
 #bgChange {
   position: absolute;
-  background-color: transparent;
+  background-color: #333;
   font-size: 1.4rem;
-  border: 1px solid #fff;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 70px;
+  height: 28px;
+  border-radius: 2rem;
   padding: 0.5rem;
   color: #fff;
   cursor: pointer;
-  text-transform: uppercase;
   right: 2rem;
   top: 2rem;
   bottom: 0;
+  transition: 0.3s ease;
+  border: none;
 }
 
-.bgDark {
-  background: url(../assets/desktop-bg.jpg) no-repeat fixed center center/cover;
+#bgChange.active {
+  background-color: #fff;
+}
+
+.ball {
+  position: relative;
+  top: -3px;
+  width: 18px;
+  height: 18px;
+  left: -1px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.ball.active {
+  background-color: #333;
+  left: 40px;
 }
 
 .btnLight {
@@ -55,10 +72,11 @@ body {
   border-radius: 50%;
   z-index: -1;
   filter: blur(100px);
+  transition: 0.3s ease;
 }
 
 .bg-div {
-  background-color: rgba(90, 116, 230, 0.6156862745);
+  background-color: rgba(90, 116, 230, 0.4235294118);
   width: 65rem;
   height: 65rem;
   right: -20rem;
@@ -74,59 +92,89 @@ body {
 }
 
 .bg-div-3 {
-  background-color: rgba(236, 76, 215, 0.137254902);
+  background-color: rgba(223, 76, 236, 0.1019607843);
   bottom: 0;
-  width: 65rem;
-  height: 65rem;
-  left: -20rem;
+  width: 75rem;
+  height: 75rem;
+  left: -10rem;
   bottom: -40rem;
 }
 
 .bg-div-4 {
   background-color: rgba(59, 120, 233, 0.3843137255);
   bottom: 0;
-  width: 65rem;
-  height: 65rem;
-  right: -20rem;
+  width: 75rem;
+  height: 75rem;
+  right: -10rem;
   bottom: -40rem;
 }
 
+.bg-div.dark {
+  background-color: rgba(14, 7, 32, 0.8470588235);
+}
+
+.bg-div-2.dark {
+  background-color: rgba(40, 40, 80, 0.937254902);
+}
+
+.bg-div-3.dark {
+  background-color: rgba(24, 14, 68, 0.7960784314);
+}
+
+.bg-div-4.dark {
+  background-color: rgba(18, 23, 87, 0.7882352941);
+}
+
 @media screen and (max-width: 420px) {
-  #bgChange {
-    top: 25em;
-  }
-  .notification-container {
-    bottom: 8rem;
-    width: 95vw;
-    left: calc(50% - 47.5vw);
+  .bg-div,
+  .bg-div-2,
+  .bg-div-3,
+  .bg-div-4 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+    transition: 0.3s ease;
   }
   .bg-div {
-    width: 40vw;
-    height: 40vh;
-    right: 0rem;
-    top: 0rem;
-    background-color: rgba(229, 159, 243, 0.8823529412);
+    width: 90vw;
+    height: 70vh;
+    right: -6rem;
+    top: -4rem;
+    background-color: rgba(182, 181, 235, 0.7607843137);
   }
   .bg-div-2 {
-    width: 40vw;
-    height: 40vh;
-    left: 0rem;
-    top: 0rem;
-    background-color: rgba(153, 209, 231, 0.9254901961);
+    width: 70vw;
+    height: 90vh;
+    left: -5rem;
+    top: -8rem;
+    background-color: #99d1e7;
   }
   .bg-div-3 {
-    width: 40vw;
-    height: 40vh;
-    left: 0rem;
-    bottom: 0rem;
-    background-color: rgb(139, 180, 243);
+    width: 80vw;
+    height: 70vh;
+    left: -5rem;
+    bottom: -9rem;
+    background-color: rgba(186, 81, 255, 0.231372549);
   }
   .bg-div-4 {
-    width: 40vw;
-    height: 40vh;
-    right: 0rem;
-    bottom: 0rem;
-    background-color: rgba(233, 59, 204, 0.4784313725);
+    width: 70vw;
+    height: 70vh;
+    right: -4rem;
+    bottom: -10rem;
+    background-color: rgba(58, 95, 175, 0.3019607843);
+  }
+  .bg-div.dark {
+    background-color: rgba(40, 18, 94, 0.6235294118);
+  }
+  .bg-div-2.dark {
+    background-color: rgba(8, 16, 61, 0.8274509804);
+  }
+  .bg-div-3.dark {
+    background-color: rgba(7, 5, 104, 0.7058823529);
+  }
+  .bg-div-4.dark {
+    background-color: rgba(22, 42, 97, 0.8705882353);
   }
 }
 .toaster-empty,
