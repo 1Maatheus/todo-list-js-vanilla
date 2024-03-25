@@ -52,7 +52,7 @@ body {
   border-radius: 50%;
   background-color: #fff;
   display: block;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .ball.active {
@@ -139,29 +139,28 @@ body {
   .bg-div {
     width: 90vw;
     height: 70vh;
-    right: -6rem;
-    top: -4rem;
+    right: 0;
     background-color: rgba(182, 181, 235, 0.7607843137);
   }
   .bg-div-2 {
     width: 70vw;
     height: 90vh;
-    left: -5rem;
-    top: -8rem;
+    left: 0;
+    top: 0rem;
     background-color: #99d1e7;
   }
   .bg-div-3 {
     width: 80vw;
     height: 70vh;
-    left: -5rem;
-    bottom: -9rem;
+    left: 0;
+    bottom: 0;
     background-color: rgba(186, 81, 255, 0.231372549);
   }
   .bg-div-4 {
     width: 70vw;
     height: 70vh;
-    right: -4rem;
-    bottom: -10rem;
+    right: 0;
+    bottom: 0;
     background-color: rgba(58, 95, 175, 0.3019607843);
   }
   .bg-div.dark {
