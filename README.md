@@ -51,16 +51,3 @@ Acesse o app clicando [AQUI](https://1maatheus.github.io/todo-list-js-vanilla).
 <img src="./assets/todo-complete.png" />
 
 - Ao marcar uma tarefa como concluída, o título da todo fica com uma estilização diferente.
-
-<br>
-<br>
-
-<h1 align="center">Dark Theme</h1>
-
-<img src="./assets/dark-theme.png" />
-
-<br>
-
-- Ao alternar entre os temas, o botão de switch muda conforme o tema atual. Se estiver no thema dark, o ícone do botão é um Sol. Se estiver no tema light, o ícone muda para uma Lua, fazendo alusão ao dia e noite!
-
-<br>

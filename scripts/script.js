@@ -113,52 +113,8 @@ function callToasterTodo() {
   }, 2000);
 }
 
-//Function to load the todos from the local storage when the page is refreshed
-function trocarBg() {
-  const bg1 = document.querySelector(".bg-div");
-  const bg2 = document.querySelector(".bg-div-2");
-  const bg3 = document.querySelector(".bg-div-3");
-  const bg4 = document.querySelector(".bg-div-4");
-
-  bg1.classList.toggle("dark");
-  bg2.classList.toggle("dark");
-  bg3.classList.toggle("dark");
-  bg4.classList.toggle("dark");
-
-  const btn = document.getElementById("bgChange");
-  btn.classList.toggle("active");
-
-  const ball = document.querySelector(".ball");
-  ball.classList.toggle("active");
-
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    const body = document.querySelector("body");
-    body.classList.toggle("bgDark");
-  }
-
-  saveThemeLocalStorage();
-}
-
-//Function to save the theme in the local storage
-const saveThemeLocalStorage = () => {
-  const body = document.querySelector("body");
-  localStorage.setItem("theme", body.classList.contains("bgDark"));
-};
-
-//Function to get the theme from the local storage
-const getThemeLocalStorage = () => {
-  const body = document.querySelector("body");
-  const theme = JSON.parse(localStorage.getItem("theme"));
-  if (theme === true) {
-    body.classList.add("bgDark");
-    const btn = document.getElementById("bgChange");
-    btn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-  }
-};
-
 //Load the todos and the theme from the local storage when the page is refreshed
 document.addEventListener("DOMContentLoaded", () => {
-  getThemeLocalStorage();
   todos = readTodos();
   renderTodo();
 });
