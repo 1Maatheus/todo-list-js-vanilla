@@ -131,6 +131,11 @@ function trocarBg() {
   const ball = document.querySelector(".ball");
   ball.classList.toggle("active");
 
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    const body = document.querySelector("body");
+    body.classList.toggle("bgDark");
+  }
+
   saveThemeLocalStorage();
 }
 
