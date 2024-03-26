@@ -31,6 +31,7 @@ Acesse o app clicando [AQUI](https://1maatheus.github.io/todo-list-js-vanilla).
 - Marcador de tarefa concluída.
 
 <br>
+<br>
 
 # 💻 Exemplos
 
